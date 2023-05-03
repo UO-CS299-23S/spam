@@ -1,6 +1,9 @@
 """Per documentation at
 https://setuptools.pypa.io/en/latest/userguide/ext_modules.html
 
+BUT give command:
+python setup.py build_ext
+
 """
 
 from setuptools import Extension, setup

@@ -28,10 +28,13 @@ static PyMethodDef SpamMethods[] = {
         {NULL, NULL, 0, NULL}
 };
 
+PyDoc_STRVAR(spam_doc, "This is direct from Python documentation");
+
 static struct PyModuleDef spammodule = {
         PyModuleDef_HEAD_INIT,
         "spam",   /* name of module */
-        NULL, // spam_doc, /* module documentation, may be NULL */
+        spam_doc,
+         // spam_doc, /* module documentation, may be NULL */
         -1,       /* size of per-interpreter state of the module,
                  or -1 if the module keeps state in global variables. */
         SpamMethods
@@ -40,11 +43,15 @@ static struct PyModuleDef spammodule = {
 PyMODINIT_FUNC
 PyInit_spam(void)
 {
+    printf("Initializing module!\n");
     PyObject *m;
 
     m = PyModule_Create(&spammodule);
-    if (m == NULL)
+    if (m == NULL) {
+        printf("Oops, module creation failed\n");
         return NULL;
+    }
+    printf("Module creation succeeded!\n");
 
     SpamError = PyErr_NewException("spam.error", NULL, NULL);
     Py_XINCREF(SpamError);
