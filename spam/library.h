@@ -1,0 +1,8 @@
+#ifndef PYTHON_EXTEND_LIBRARY_H
+#define PYTHON_EXTEND_LIBRARY_H
+
+#define PY_SSIZE_T_CLEAN
+#include <Python.h>
+
+
+#endif //PYTHON_EXTEND_LIBRARY_H
