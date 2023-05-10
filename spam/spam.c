@@ -1,7 +1,7 @@
 //
 // Created by jhcat on 5/3/2023.
 //
-#include <python.h>
+#include <Python.h>
 #include <stdlib.h>  // I think we need this for "system"
 
 static PyObject *SpamError;
